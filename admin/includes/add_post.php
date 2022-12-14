@@ -19,15 +19,15 @@
         move_uploaded_file($post_image_temp, "../images/$post_image" );
        
        
-      $query = "INSERT INTO posts(post_category_id, post_title, post_author, post_date,post_image,post_content,post_tags,post_status,post_comment_count) ";
+      $query = "INSERT INTO posts(post_category_id, post_title, post_author, post_date, post_image, post_content, post_tags,post_comment_count, post_status) ";
              
-      $query .= "VALUES({$post_category_id},'{$post_title}','{$post_author}',now(),'{$post_image}','{$post_content}','{$post_tags}', '{$post_status}', '{$post_comment_count}') "; 
-             
-      $create_post_query = mysqli_query($connection, $query);  
+      $query .= "VALUES({$post_category_id},'{$post_title}','{$post_author}',now(),'{$post_image}','{$post_content}','{$post_tags}', '{$post_comment_count}', '{$post_status}' )"; 
+    
+       $create_post_query = mysqli_query($connection, $query);  
           
        confirmQuery($create_post_query);
 
-      $the_post_id = mysqli_insert_id($connection);
+       $the_post_id = mysqli_insert_id($connection);
 
 
       echo "<p class='bg-success'>Post Created. <a href='../post.php?p_id={$the_post_id}'>View Post </a> or <a href='posts.php'>Edit More Posts</a></p>";
