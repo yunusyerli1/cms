@@ -67,7 +67,7 @@ if(isset($_GET['edit_user'])){
 
         if($db_user_password != $user_password) {
 
-            $hashed_password = password_hash($user_password, PASSWORD_BCRYPT, array('cost' => 12));
+           // $hashed_password = password_hash($user_password, PASSWORD_BCRYPT, array('cost' => 12));
 
           }
 
@@ -78,7 +78,7 @@ if(isset($_GET['edit_user'])){
           $query .="user_role   =  '{$user_role}', ";
           $query .="username = '{$username}', ";
           $query .="user_email = '{$user_email}', ";
-          $query .="user_password   = '{$hashed_password}' ";
+          $query .="user_password   = '{$user_password}' ";
           $query .= "WHERE user_id = {$the_user_id} ";
        
        
