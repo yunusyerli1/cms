@@ -10,8 +10,16 @@
             <!-- Blog Entries Column -->
             <div class="col-md-8">
                 <?php
-                    $query = "SELECT * from posts";
+                    $query = "SELECT * FROM posts WHERE post_status = 'published'";
                     $select_all_posts_query = mysqli_query($connection, $query);
+
+                    if(!$select_all_posts_query){
+                        die('QUERY FAILED' . mysqli_error($connection));
+                    }
+
+                    if(mysqli_num_rows($select_all_posts_query) == 0){
+                        echo '<h2>Sorry no posts to show</h2>';
+                    }else{
                     
                     while($row = mysqli_fetch_assoc($select_all_posts_query)) {
                         $post_id = $row['post_id'];
@@ -22,9 +30,7 @@
                         $post_content = substr($row['post_content'],0,200);
                         $post_status= $row['post_status'];
 
-                        if($post_status !== 'published') {
-                            echo "<h1 class='text-center'>NO POST SORRY</h1>";
-                        } else {
+                      
 
                        
                         ?>
