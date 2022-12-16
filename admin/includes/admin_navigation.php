@@ -19,10 +19,6 @@
                     if(isset($_SESSION['username'])) {
                         echo $_SESSION['username'];
                     }
-
-
-
-
                     ?>
                     
                     <b class="caret"></b></a>
