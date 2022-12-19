@@ -2,7 +2,6 @@
     <div id="wrapper">
 
 
-
         <!-- Navigation -->
  
         <?php include "includes/admin_navigation.php" ?>
@@ -24,23 +23,8 @@
                             <small> <?php 
 
                             if(isset($_SESSION['username'])) {
-
                             echo $_SESSION['username'];
-
                             }
-
-
-                            // if(is_admin($_SESSION['username'])){
-
-                            //     echo " -- is admin too";
-
-                            // } else {
-
-                            //     echo " ---is not";
-
-                            // }
-
-
                             ?></small>
                         </h1>
      
