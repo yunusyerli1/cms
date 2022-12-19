@@ -29,6 +29,9 @@
                    <li>
                         <a href="admin">Admin</a>
                     </li>
+                    <li>
+                        <a href="registration.php">Registration</a>
+                    </li>
                     <?php
                     if (session_status() == PHP_SESSION_NONE) session_start(); 
                     if(isset($_SESSION['user_role'])) {
