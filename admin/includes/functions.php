@@ -1,5 +1,10 @@
 <?php 
 
+function redirect($location){
+    header("Location:" . $location);
+    exit;
+}
+
 function confirmQuery($result) {
     global $connection;
     if(!$result ) {       
